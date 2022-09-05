@@ -1,6 +1,17 @@
+local getSporeInjectorTiles = require "ns/SporeInjectorTiles"
 
-return function(print, tick, surface)
-    print("sdsd "..tick)
+return function(tick)
+    local print = game.print
+    local surface = game.surfaces["nauvis"]
+
+
+    if tick % 60 == 0 then
+        print("sdsd "..tick)
+    end
+
+    local es = getSporeInjectorTiles(surface)
+
+    --
 
     -- // Dont bother with steps fixed in time. Make a step when performance allows.
     -- // Dont exec steps faster than minimum ticks. Maintain startingTickOfTheLastStep.

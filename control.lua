@@ -1,8 +1,8 @@
-local ontick = require "ns/ontick"
+local ontick = require "ns/OnTick"
 
 local registerEvents = function()
     script.on_event(defines.events.on_tick, function(e)
-        ontick(game.print, e.tick, game.surfaces["nauvis"])
+        ontick(e.tick)
     end)
 end
 
