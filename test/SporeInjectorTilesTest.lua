@@ -9,7 +9,11 @@ function t:teardown()
 end
 
 function t:testSingle()
-    --TODO getSporeInjectorTiles
+    local surface = {}
+    surface.find_entities_filtered = function()
+        return {x=1,}
+    end
+    getSporeInjectorTiles(surface)
 end
 
 function t:testInfElevation()
