@@ -1,3 +1,4 @@
+--- http://siffiejoe.github.io/lua-multikey/
 multikey = require("lib/multikey")
 
 local ontick = require "ns/OnTick"

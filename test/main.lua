@@ -1,8 +1,10 @@
 EXPORT_ASSERT_TO_GLOBALS = true
 luaunit = require('test/luaunit')
 
+multikey = require("lib/multikey")
+
 --- Smaller tests
-TestSporeInjectorTiles = require("test/SporeInjectorTilesTest")
+TestSingleTileToValues = require("test/SingleTileToValuesTest")
 
 --- Bigger tests
 
