@@ -22,7 +22,7 @@ return function(print, tick, surface, sporeInjectionsStorage)
     local newInjectionValues = singleTileToValues(sporeInjectorTiles)
 
     --- ### Append to SporeInjectionsStorage
-    sporeInjectionsStorage = mergeTileToVals(newInjectionValues, sporeInjectionsStorage)
+    sporeInjectionsStorage = mergeTileToVals(sporeInjectionsStorage, newInjectionValues)
     -- Eval ContaminatedField by SporeInjections blurring\math. Each source is a layer to add?
     -- Eval ContaminatedTiles
     -- Apply noise distortion
