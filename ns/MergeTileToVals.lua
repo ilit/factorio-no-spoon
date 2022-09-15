@@ -1,6 +1,8 @@
 return function(a1, a2)
-    assertNotEquals(a1, nil)
-    assertNotEquals(a2, nil)
+    if (a1 == nil) then error("a1 == nil") end
+    if (a2 == nil) then error("a2 == nil") end
+    if (multikey == nil) then error("multikey == nil") end
+    if (multikey.tuples == nil) then error("multikey.tuples == nil") end
 
     local res = {}
 

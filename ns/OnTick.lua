@@ -16,13 +16,14 @@ return function(print, tick, surface, sporeInjectionsStorage)
     --- ### SporeInjections gather data ###
     local sporeInjectors = evalSporeInjectors(surface)
     local sporeInjectorTiles = evalEntitiesToTiles(sporeInjectors)
-    for _,tile in ipairs(sporeInjectorTiles) do
-        print(tile.x .. " " .. tile.y)
-    end
     local newInjectionValues = singleTileToValues(sporeInjectorTiles)
 
     --- ### Append to SporeInjectionsStorage
     sporeInjectionsStorage = mergeTileToVals(sporeInjectionsStorage, newInjectionValues)
+
+    for _,ttv in ipairs(sporeInjectionsStorage) do
+        print(ttv.x .. " " .. ttv.y .. " " .. ttv.val)
+    end
     -- Eval ContaminatedField by SporeInjections blurring\math. Each source is a layer to add?
     -- Eval ContaminatedTiles
     -- Apply noise distortion
