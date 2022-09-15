@@ -5,6 +5,6 @@ ttv = require "ns/TileToValues"
 
 TestTileToValues = require("test/TileToValuesTest")
 TestSingleTileToValues = require("test/SingleTileToValuesTest")
---TestMergeTileToVals = require("test/MergeTileToValsTest")
+TestMergeTileToVals = require("test/MergeTileToValsTest")
 
 os.exit( luaunit.LuaUnit.run("-v") )
