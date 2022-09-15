@@ -1,7 +1,8 @@
 return function(tiles)
-    local res = {}
+    local res = ttv.new()
+
     for _,t in ipairs(tiles) do
-        multikey.put(res, t.x, t.y, 1)
+        res.append(t.x, t.y, 1)
     end
 
     return res

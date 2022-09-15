@@ -14,9 +14,9 @@ function t:testSingle()
     local tileToVals = singleTileToValues(tiles)
 
     assertNotEquals(tileToVals, nil)
-    assertEquals(multikey.get(tileToVals, 1, 1), 1)
-    assertEquals(multikey.get(tileToVals, 2, 3), 1)
-    assertEquals(multikey.get(tileToVals, 3, 3), nil)
+    assertEquals(tileToVals.get(1, 1), 1)
+    assertEquals(tileToVals.get(2, 3), 1)
+    assertEquals(tileToVals.get(11, 11), 0)
 end
 
 return t
