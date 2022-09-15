@@ -3,9 +3,7 @@ luaunit = require('test/luaunit')
 
 multikey = require("lib/multikey")
 
---- Smaller tests
 TestSingleTileToValues = require("test/SingleTileToValuesTest")
-
---- Bigger tests
+TestMergeTileToVals = require("test/MergeTileToValsTest")
 
 os.exit( luaunit.LuaUnit.run("-v") )
