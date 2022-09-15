@@ -1,4 +1,5 @@
 local ontick = require "ns/OnTick"
+ttv = require "ns/TileToValues"
 
 local registerEvents = function()
     script.on_event(defines.events.on_tick, function(e)

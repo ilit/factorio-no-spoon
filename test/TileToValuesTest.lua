@@ -1,5 +1,3 @@
-local ttv = require "ns/TileToValues"
-
 local t = {}
 
 function t:testSingle()
