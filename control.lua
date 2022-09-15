@@ -8,7 +8,7 @@ local registerEvents = function()
 end
 
 local init = function()
-    sporeInjectionsStorage = {}
+    sporeInjectionsStorage = ttv.new()
 
     registerEvents()
 end

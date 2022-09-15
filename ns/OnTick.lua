@@ -8,7 +8,7 @@ return function(print, tick, surface, sporeInjectionsStorage)
         return
     end
 
-    print("sdsd "..tick)
+    print("tick: "..tick)
 
     -- // Dont bother with steps fixed in time. Make a step when performance allows.
     -- // Dont exec steps faster than minimum ticks. Maintain startingTickOfTheLastStep.
@@ -21,8 +21,9 @@ return function(print, tick, surface, sporeInjectionsStorage)
     --- ### Append to SporeInjectionsStorage
     sporeInjectionsStorage = mergeTileToVals(sporeInjectionsStorage, newInjectionValues)
 
-    for _,ttv in ipairs(sporeInjectionsStorage) do
-        print(ttv.x .. " " .. ttv.y .. " " .. ttv.val)
+    local sis = sporeInjectionsStorage
+    for i=1, sis.len do
+        print(sis.xs[i] .. " " .. sis.ys[i].. " " .. sis.vals[i])
     end
     -- Eval ContaminatedField by SporeInjections blurring\math. Each source is a layer to add?
     -- Eval ContaminatedTiles
