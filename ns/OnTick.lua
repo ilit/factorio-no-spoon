@@ -3,7 +3,7 @@ local evalEntitiesToTiles = require "ns/EntitiesToTiles"
 local mergeTileToVals = require "ns/MergeTileToVals"
 local appendsValuesToTiles = require "AppendValuesToTiles"
 
-return function(print, tick, surface, sporeInjectionsStorage)
+return function(print, tick, surface, prevSporeInjections)
     if tick % 60 ~= 0 then
         return
     end
@@ -19,14 +19,17 @@ return function(print, tick, surface, sporeInjectionsStorage)
     local newInjectionValues = appendsValuesToTiles(sporeInjectorTiles)
 
     --- ### Append to SporeInjectionsStorage
-    sporeInjectionsStorage = mergeTileToVals(sporeInjectionsStorage, newInjectionValues)
+    -- TODO fix ttv1 == nil
+    local updatedSporeInjections = mergeTileToVals(prevSporeInjections, newInjectionValues)
 
-    local sis = sporeInjectionsStorage
-    for i=1, sis.len do
-        print(sis.xs[i] .. " " .. sis.ys[i].. " " .. sis.vals[i])
+    local usi = updatedSporeInjections
+    for i=1, usi.len do
+        print(usi.xs[i] .. " " .. usi.ys[i].. " " .. usi.vals[i])
     end
     -- Eval ContaminatedField by SporeInjections blurring\math. Each source is a layer to add?
     -- Eval ContaminatedTiles
     -- Apply noise distortion
     -- Try to update a tile. --TODO Skip update if it is already of correct name.
+
+    return updatedSporeInjections
 end

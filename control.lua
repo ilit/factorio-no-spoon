@@ -1,14 +1,20 @@
 local ontick = require "ns/OnTick"
 ttv = require "ns/TileToValues"
 
+sporeInjections = {}
+
 local registerEvents = function()
     script.on_event(defines.events.on_tick, function(e)
-        ontick(game.print, e.tick, game.surfaces["nauvis"], sporeInjectionsStorage)
+        sporeInjections = ontick(
+                game.print,
+                e.tick,
+                game.surfaces["nauvis"],
+                sporeInjections)
     end)
 end
 
 local init = function()
-    sporeInjectionsStorage = ttv.new()
+    sporeInjections = ttv.new()
 
     registerEvents()
 end
