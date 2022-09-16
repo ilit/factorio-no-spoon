@@ -1,7 +1,7 @@
 local evalSporeInjectors = require "ns/SporeInjectors"
 local evalEntitiesToTiles = require "ns/EntitiesToTiles"
 local mergeTileToVals = require "ns/MergeTileToVals"
-local singleTileToValues = require "ns/SingleTileToValues"
+local appendsValuesToTiles = require "AppendValuesToTiles"
 
 return function(print, tick, surface, sporeInjectionsStorage)
     if tick % 60 ~= 0 then
@@ -16,7 +16,7 @@ return function(print, tick, surface, sporeInjectionsStorage)
     --- ### SporeInjections gather data ###
     local sporeInjectors = evalSporeInjectors(surface)
     local sporeInjectorTiles = evalEntitiesToTiles(sporeInjectors)
-    local newInjectionValues = singleTileToValues(sporeInjectorTiles)
+    local newInjectionValues = appendsValuesToTiles(sporeInjectorTiles)
 
     --- ### Append to SporeInjectionsStorage
     sporeInjectionsStorage = mergeTileToVals(sporeInjectionsStorage, newInjectionValues)

@@ -4,7 +4,7 @@ luaunit = require('test/luaunit')
 ttv = require "ns/TileToValues"
 
 TestTileToValues = require("test/TileToValuesTest")
-TestSingleTileToValues = require("test/SingleTileToValuesTest")
+TestAppendValuesToTiles = require("test/AppendValuesToTilesTest")
 TestMergeTileToVals = require("test/MergeTileToValsTest")
 
 os.exit( luaunit.LuaUnit.run("-v") )
