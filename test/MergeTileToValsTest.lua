@@ -1,4 +1,4 @@
-local mergeTileToVals = require "ns/MergeTileToVals"
+local mergeTileToVals = require "ns/UpdateSporeInjectors/MergeTileToVals"
 
 local t = {}
 

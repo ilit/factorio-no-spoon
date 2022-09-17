@@ -1,4 +1,4 @@
-local singleTileToValues = require "ns/AppendValuesToTiles"
+local singleTileToValues = require "ns/UpdateSporeInjectors/AppendValuesToTiles"
 
 local t = {}
 

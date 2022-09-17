@@ -1,7 +1,7 @@
 EXPORT_ASSERT_TO_GLOBALS = true
 luaunit = require('test/luaunit')
 
-ttv = require "ns/TileToValues"
+ttv = require "ns/mylib/TileToValues"
 
 TestTileToValues = require("test/TileToValuesTest")
 TestAppendValuesToTiles = require("test/AppendValuesToTilesTest")

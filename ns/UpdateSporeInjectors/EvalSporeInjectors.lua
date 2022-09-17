@@ -1,4 +1,4 @@
-function TableConcat(t1,t2)
+local tableConcat = function(t1,t2)
     for i=1,#t2 do
         t1[#t1+1] = t2[i]
     end
@@ -10,7 +10,7 @@ return function(surface)
     local b = surface.find_entities_filtered{name = "crash-site-spaceship"}
     local c = surface.find_entities_filtered{name = "crash-site-spaceship-wreck-big-2"}
 
-    local ab = TableConcat(a, b)
-    local abc = TableConcat(ab, c)
+    local ab = tableConcat(a, b)
+    local abc = tableConcat(ab, c)
     return abc
 end

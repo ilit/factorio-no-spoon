@@ -1,5 +1,5 @@
 --- Global Libs ---
-ttv = require "ns/TileToValues"
+ttv = require "ns/mylib/TileToValues"
 ---
 
 local ontick = require "ns/OnTick"

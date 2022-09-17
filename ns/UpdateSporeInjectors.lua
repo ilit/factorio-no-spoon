@@ -1,7 +1,7 @@
-local evalSporeInjectors = require "ns/SporeInjectors"
-local evalEntitiesToTiles = require "ns/EntitiesToTiles"
-local mergeTileToVals = require "ns/MergeTileToVals"
-local appendsValuesToTiles = require "AppendValuesToTiles"
+local evalSporeInjectors = require "ns/UpdateSporeInjectors/EvalSporeInjectors"
+local evalEntitiesToTiles = require "ns/UpdateSporeInjectors/EntitiesToTiles"
+local mergeTileToVals = require "ns/UpdateSporeInjectors/MergeTileToVals"
+local appendsValuesToTiles = require "ns/UpdateSporeInjectors/AppendValuesToTiles"
 
 return function(print, tick, surface, prevSporeInjections)
     print("tick: "..tick)
