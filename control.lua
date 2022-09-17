@@ -5,11 +5,13 @@ sporeInjections = {}
 
 local registerEvents = function()
     script.on_event(defines.events.on_tick, function(e)
-        sporeInjections = ontick(
-                game.print,
-                e.tick,
-                game.surfaces["nauvis"],
-                sporeInjections)
+        if e.tick % 60 == 0 then
+            sporeInjections = ontick(
+                    game.print,
+                    e.tick,
+                    game.surfaces["nauvis"],
+                    sporeInjections)
+        end
     end)
 end
 

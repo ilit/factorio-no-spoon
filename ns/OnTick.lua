@@ -4,10 +4,6 @@ local mergeTileToVals = require "ns/MergeTileToVals"
 local appendsValuesToTiles = require "AppendValuesToTiles"
 
 return function(print, tick, surface, prevSporeInjections)
-    if tick % 60 ~= 0 then
-        return
-    end
-
     print("tick: "..tick)
 
     -- // Dont bother with steps fixed in time. Make a step when performance allows.
