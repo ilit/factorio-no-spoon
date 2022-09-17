@@ -1,5 +1,6 @@
 --- Global Libs ---
 ttv = require "ns/mylib/TileToValues"
+print = {}
 ---
 
 local ontick = require "ns/OnTick"
@@ -11,6 +12,7 @@ local registerEvents = function()
 end
 
 local init = function()
+    print = game.print
     registerEvents()
 end
 
