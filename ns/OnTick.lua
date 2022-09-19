@@ -1,5 +1,6 @@
-local updateSporeInjections = require "UpdateSporeInjections"
-local smoothInjections = require "EvalSmoothInjections"
+local evalUpdatedSporeInjections = require "EvalUpdatedSporeInjections"
+local evalSmoothInjections = require "EvalSmoothInjections"
+--local evalContaminatedFields = require "EvalContaminatedFields"
 
 --- Global vars ---
 sporeInjections = ttv.new()
@@ -11,17 +12,18 @@ return function(tick)
         -- // Dont bother with steps fixed in time. Make a step when performance allows.
         -- // Dont exec steps faster than minimum ticks. Maintain startingTickOfTheLastStep.
 
-        local updatedSporeInjections = updateSporeInjections(
+        local updatedSporeInjections = evalUpdatedSporeInjections(
                 game.surfaces["nauvis"],
                 sporeInjections)
         sporeInjections = updatedSporeInjections
 
-        local smoothedInjections = smoothInjections(sporeInjections)
+        local smoothedInjections = evalSmoothInjections(sporeInjections)
         local si = smoothedInjections
         for i=1, si.len do
             print(si.xs[i] .. " " .. si.ys[i].. " " .. si.vals[i])
         end
 
+        --local contaminatedFields = evalContaminatedFields(smoothedInjections)
         -- Eval ContaminatedTiles
         --Point point(100, 100);
         --for(int x = -radius; x <= radius; ++x)
