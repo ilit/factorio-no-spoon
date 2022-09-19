@@ -6,7 +6,7 @@ return function(ttvRaw)
         local y = ttvRaw.ys[i]
         local val = ttvRaw.vals[i]
 
-        local smoothedVal = math.floor(math.log(val))
+        local smoothedVal = math.floor(math.log(val)) + 1
 
         res.append(x, y, smoothedVal)
     end

@@ -9,5 +9,6 @@ TestTiles = require("test/TilesTest")
 TestAppendValuesToTiles = require("test/AppendValuesToTilesTest")
 TestMergeTileToVals = require("test/MergeTileToValsTest")
 TestMergeTiles = require("test/MergeTilesTest")
+TestEvalContaminatedField = require("test/EvalContaminatedFieldTest")
 
 os.exit( luaunit.LuaUnit.run("-v") )
