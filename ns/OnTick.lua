@@ -1,6 +1,6 @@
 local evalUpdatedSporeInjections = require "EvalUpdatedSporeInjections"
 local evalSmoothInjections = require "EvalSmoothInjections"
-local evalContaminatedFields = require "EvalContaminatedFields"
+--local evalContaminatedFields = require "EvalContaminatedFields"
 
 --- Global vars ---
 sporeInjections = ttv.new()
@@ -23,7 +23,7 @@ return function(tick)
             print(si.xs[i] .. " " .. si.ys[i].. " " .. si.vals[i])
         end
 
-        local contaminatedFields = evalContaminatedFields(smoothedInjections)
+        -- local contaminatedFields = evalContaminatedFields(smoothedInjections)
         -- Eval ContaminatedTiles
 
         -- Apply noise distortion

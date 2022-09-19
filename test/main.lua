@@ -5,6 +5,7 @@ ttv = require "ns/mylib/TileToValues"
 Tiles = require "ns/mylib/Tiles"
 
 TestTileToValues = require("test/TileToValuesTest")
+TestTiles = require("test/TilesTest")
 TestAppendValuesToTiles = require("test/AppendValuesToTilesTest")
 TestMergeTileToVals = require("test/MergeTileToValsTest")
 TestEvalContaminatedFieldsTest = require("test/EvalContaminatedFieldsTest")
