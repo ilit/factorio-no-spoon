@@ -9,4 +9,6 @@ return function(sporeInjs)
         local field = evalContaminatedField(x, y, strength)
         table.insert(contaminatedFields, field)
     end
+
+    return contaminatedFields
 end
