@@ -17,11 +17,12 @@ return function(tick)
         sporeInjections = updatedSporeInjections
 
         local contaminatedTiles = evalContaminatedTiles(sporeInjections)
+        print(contaminatedTiles.len)
 
         local t = contaminatedTiles
-        for i=1, t.len do
-            print(t.xs[i] .. " " .. t.ys[i])
-        end
+        --for i=1, t.len do
+        --    print(t.xs[i] .. " " .. t.ys[i])
+        --end
 
         -- Try to update a tile. --TODO Skip update if it is already of correct name.
     end
