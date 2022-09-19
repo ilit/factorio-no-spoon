@@ -18,7 +18,7 @@ return function(tiles1, tiles2)
 
     for t2i=1, tiles2.len do
         if not t1contains(t2i) then
-            merged.append(tiles1.x, tiles1.y)
+            merged.append(tiles2.xs[t2i], tiles2.ys[t2i])
         end
     end
 
