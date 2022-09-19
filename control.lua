@@ -1,5 +1,6 @@
 --- Global Libs ---
 ttv = require "ns/mylib/TileToValues"
+Tiles = require "ns/mylib/Tiles"
 print = {}
 ---
 

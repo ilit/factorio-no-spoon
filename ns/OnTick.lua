@@ -1,6 +1,6 @@
 local evalUpdatedSporeInjections = require "EvalUpdatedSporeInjections"
 local evalSmoothInjections = require "EvalSmoothInjections"
---local evalContaminatedFields = require "EvalContaminatedFields"
+local evalContaminatedFields = require "EvalContaminatedFields"
 
 --- Global vars ---
 sporeInjections = ttv.new()
@@ -23,15 +23,8 @@ return function(tick)
             print(si.xs[i] .. " " .. si.ys[i].. " " .. si.vals[i])
         end
 
-        --local contaminatedFields = evalContaminatedFields(smoothedInjections)
+        local contaminatedFields = evalContaminatedFields(smoothedInjections)
         -- Eval ContaminatedTiles
-        --Point point(100, 100);
-        --for(int x = -radius; x <= radius; ++x)
-        --for(int y = -radius; y <= radius; ++y)
-        --if(x*x + y*y <= radius* radius)   {
-        --points.insert(Point(x + point.x, y + point.y));
-        --}
-
 
         -- Apply noise distortion
         -- Try to update a tile. --TODO Skip update if it is already of correct name.
