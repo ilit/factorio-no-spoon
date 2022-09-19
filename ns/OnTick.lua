@@ -1,6 +1,5 @@
-local evalUpdatedSporeInjections = require "EvalUpdatedSporeInjections"
-local evalSmoothInjections = require "EvalSmoothInjections"
---local evalContaminatedFields = require "EvalContaminatedFields"
+local evalUpdatedSporeInjections = require "ns/EvalUpdatedSporeInjections"
+local evalContaminatedTiles = require "ns/EvalContaminatedTiles"
 
 --- Global vars ---
 sporeInjections = ttv.new()
@@ -17,16 +16,13 @@ return function(tick)
                 sporeInjections)
         sporeInjections = updatedSporeInjections
 
-        local smoothedInjections = evalSmoothInjections(sporeInjections)
-        local si = smoothedInjections
-        for i=1, si.len do
-            print(si.xs[i] .. " " .. si.ys[i].. " " .. si.vals[i])
-        end
+        local contaminatedTiles = evalContaminatedTiles(sporeInjections)
 
-        -- local contaminatedFields = evalContaminatedFields(smoothedInjections)
-        -- Eval ContaminatedTiles
+        --local t = contaminatedTiles
+        --for i=1, t.len do
+        --    print(t.xs[i] .. " " .. t.ys[i])
+        --end
 
-        -- Apply noise distortion
         -- Try to update a tile. --TODO Skip update if it is already of correct name.
     end
 end
