@@ -23,8 +23,9 @@ return function(tick)
 
         --- Debug Stub
         contaminatedTiles = Tiles.new()
-        for x=-60, 60 do
-            for y=-60, 60 do
+        local RAD = 30
+        for x=-RAD, RAD do
+            for y=-RAD, RAD do
                 contaminatedTiles.append(x, y)
             end
         end
