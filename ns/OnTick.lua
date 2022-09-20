@@ -21,6 +21,14 @@ return function(tick)
         local contaminatedTiles = evalContaminatedTiles(sporeInjections)
         print(contaminatedTiles.len)
 
+        --- Debug Stub
+        contaminatedTiles = Tiles.new()
+        for x=-60, 60 do
+            for y=-60, 60 do
+                contaminatedTiles.append(x, y)
+            end
+        end
+
         updateSurfaceTiles(surface, contaminatedTiles)
 
         -- Try to update a tile. --TODO Skip update if it is already of correct name.
