@@ -1,3 +1,5 @@
+local biomeSeedGenerator = require "ns/biome/BiomeSeedGenerator"
+
 return function(surface, contamTiles)
     local reformattedTiles = {}
 
