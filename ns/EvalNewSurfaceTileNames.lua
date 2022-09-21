@@ -1,6 +1,6 @@
 local biomeSeedGenerator = require "ns/biome/BiomeSeedGenerator"
 
-return function(surface, contamTiles)
+return function(contamTiles)
     local reformattedTiles = {}
 
     for i=1, contamTiles.len do
@@ -22,5 +22,5 @@ return function(surface, contamTiles)
                                          position = pos })
     end
 
-    surface.set_tiles(reformattedTiles)
+    return reformattedTiles
 end
