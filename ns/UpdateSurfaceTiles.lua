@@ -1,19 +1,23 @@
+local biomeSeedGenerator = require "ns/biome/BiomeSeedGenerator"
+
 return function(surface, contamTiles)
     local reformattedTiles = {}
 
     for i=1, contamTiles.len do
-        local name
         local x = contamTiles.xs[i]
         local y = contamTiles.ys[i]
+        local pos = { x=x, y=y }
 
-        if x % 3 == 0 then
+        local name
+        local randomBiomeSeedFloat = biomeSeedGenerator(pos)
+        if randomBiomeSeedFloat < 0.5 then
             name = "vegetation-purple-grass-2"
         else
             name = "vegetation-yellow-grass-2"
         end
 
         table.insert(reformattedTiles, { name = name,
-                                         position = {x=x,y=y} })
+                                         position = pos })
     end
 
     surface.set_tiles(reformattedTiles)

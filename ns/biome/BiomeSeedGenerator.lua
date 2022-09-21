@@ -1,7 +1,7 @@
-local worldPosToVoronoiFrame = require "code/functions-lib/positions/WorldPosToVoronoiFrame"
+local worldPosToVoronoiFrame = require "ns/biome/WorldPosToVoronoiFrame"
 local constants = require "ns/Constants"
 
-if not stdLib then stdLib = require('external/stdlib-imports') end
+if not stdLib then stdLib = require('lib/stdlib-imports') end
 local Position = stdLib.position
 
 local gameRnd

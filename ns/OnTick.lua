@@ -23,7 +23,7 @@ return function(tick)
 
         --- Debug Stub
         contaminatedTiles = Tiles.new()
-        local RAD = 30
+        local RAD = 35
         for x=-RAD, RAD do
             for y=-RAD, RAD do
                 contaminatedTiles.append(x, y)
