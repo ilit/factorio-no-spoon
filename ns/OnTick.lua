@@ -14,24 +14,27 @@ return function(tick)
         -- // Dont bother with steps fixed in time. Make a step when performance allows.
         -- // Dont exec steps faster than minimum ticks. Maintain startingTickOfTheLastStep.
 
+        local previousSporeInjections = sporeInjections
         local updatedSporeInjections = evalUpdatedSporeInjections(
                 surface,
-                sporeInjections)
+                previousSporeInjections)
         sporeInjections = updatedSporeInjections
 
-        local contaminatedTilePositions = evalContaminatedTiles(sporeInjections)
-        print(contaminatedTilePositions.len)
+        local prevContamPositions = evalContaminatedTiles(previousSporeInjections)
+        local newContamPositions = evalContaminatedTiles(updatedSporeInjections)
+        print(newContamPositions.len)
 
         --- Debug Stub
-        contaminatedTilePositions = Tiles.new()
+        newContamPositions = Tiles.new()
         local RAD = 35
         for x=-RAD, RAD do
             for y=-RAD, RAD do
-                contaminatedTilePositions.append(x, y)
+                newContamPositions.append(x, y)
             end
         end
 
-        local tileToNames = evalNewSurfaceTileNames(contaminatedTilePositions)
+        local tileToNames = evalNewSurfaceTileNames(newContamPositions)
+        -- TODO Previously
         surface.set_tiles(tileToNames)
 
         -- Try to update a tile. --TODO Skip update if it is already of correct name.
