@@ -6,19 +6,6 @@ local evalDiffTiles = require "ns/mylib/DiffTiles"
 --- Global vars ---
 sporeInjections = ttv.new()
 
---- Debug Stub
-local evalStubContamPositions = function()
-    local res = Tiles.new()
-    local RAD = 35
-    for x=-RAD, RAD do
-        for y=-RAD, RAD do
-            res.append(x, y)
-        end
-    end
-
-    return res
-end
-
 return function(tick)
     if tick % 60 == 0 then
         print("tick: "..tick)
@@ -36,8 +23,6 @@ return function(tick)
 
         local prevContamPositions = evalContaminatedTiles(previousSporeInjections)
         local updatedContamPositions = evalContaminatedTiles(updatedSporeInjections)
-        -- TODO FIX - STUB DOES NOT WORK WITH DIFF
-        updatedContamPositions = evalStubContamPositions() --- STUB
         local diffContamPositions = evalDiffTiles(prevContamPositions, updatedContamPositions)
         print(diffContamPositions.len)
 
