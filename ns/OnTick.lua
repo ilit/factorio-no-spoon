@@ -5,6 +5,19 @@ local evalNewSurfaceTileNames = require "ns/EvalNewSurfaceTileNames"
 --- Global vars ---
 sporeInjections = ttv.new()
 
+--- Debug Stub
+local evalStubContamPositions = function()
+    local res = Tiles.new()
+    local RAD = 35
+    for x=-RAD, RAD do
+        for y=-RAD, RAD do
+            res.append(x, y)
+        end
+    end
+
+    return res
+end
+
 return function(tick)
     if tick % 60 == 0 then
         print("tick: "..tick)
@@ -21,19 +34,11 @@ return function(tick)
         sporeInjections = updatedSporeInjections
 
         local prevContamPositions = evalContaminatedTiles(previousSporeInjections)
-        local newContamPositions = evalContaminatedTiles(updatedSporeInjections)
-        print(newContamPositions.len)
+        local updatedContamPositions = evalContaminatedTiles(updatedSporeInjections)
+        updatedContamPositions = evalStubContamPositions()
+        print(updatedContamPositions.len)
 
-        --- Debug Stub
-        newContamPositions = Tiles.new()
-        local RAD = 35
-        for x=-RAD, RAD do
-            for y=-RAD, RAD do
-                newContamPositions.append(x, y)
-            end
-        end
-
-        local tileToNames = evalNewSurfaceTileNames(newContamPositions)
+        local tileToNames = evalNewSurfaceTileNames(updatedContamPositions)
         -- TODO Previously
         surface.set_tiles(tileToNames)
 
