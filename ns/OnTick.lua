@@ -1,6 +1,7 @@
 local evalUpdatedSporeInjections = require "ns/EvalUpdatedSporeInjections"
 local evalContaminatedTiles = require "ns/EvalContaminatedTiles"
 local evalNewSurfaceTileNames = require "ns/EvalNewSurfaceTileNames"
+local evalDiffTiles = require "ns/mylib/DiffTiles"
 
 --- Global vars ---
 sporeInjections = ttv.new()
@@ -35,13 +36,12 @@ return function(tick)
 
         local prevContamPositions = evalContaminatedTiles(previousSporeInjections)
         local updatedContamPositions = evalContaminatedTiles(updatedSporeInjections)
-        updatedContamPositions = evalStubContamPositions()
-        print(updatedContamPositions.len)
+        -- TODO FIX - STUB DOES NOT WORK WITH DIFF
+        updatedContamPositions = evalStubContamPositions() --- STUB
+        local diffContamPositions = evalDiffTiles(prevContamPositions, updatedContamPositions)
+        print(diffContamPositions.len)
 
-        local tileToNames = evalNewSurfaceTileNames(updatedContamPositions)
-        -- TODO Previously
+        local tileToNames = evalNewSurfaceTileNames(diffContamPositions)
         surface.set_tiles(tileToNames)
-
-        -- Try to update a tile. --TODO Skip update if it is already of correct name.
     end
 end
