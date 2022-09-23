@@ -8,6 +8,7 @@ sporeInjections = ttv.new()
 
 return function(tick)
     if tick % 60 == 0 then
+        print("")
         print("tick: "..tick)
 
         local surface = game.surfaces["nauvis"]
